@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library    Collections
 Resource  ../../TestData/config.robot
 Resource    ../PageObjects/LoginPage.robot
 
@@ -43,4 +44,14 @@ Title of ${formName} should be "${titleLabel}"
 Form should contain button: "${buttonName}"
     ${buttonLocation}=  set variable    xpath://button[contains((.),'${buttonName}')]
     element should be visible       ${buttonLocation}
+
+
+#date solution
+Set last date of month
+    [Arguments]    ${currentMonth}
+    ${oddMonthList} =   Create List   1    3    5    7   8    10    12
+    ${evenMonthList}=   create list    4    6   9   11
+    ${oddMonth}=    run keyword and return status    List should contain value    ${oddMonthList}         ${currentMonth}
+    ${evenMonth}=      run keyword and return status    List should contain value    ${evenMonthList}         ${currentMonth}
+
 

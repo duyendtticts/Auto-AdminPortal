@@ -54,7 +54,7 @@ User will see the error message for ${fieldName} field should be "${errorMessage
     ${fieldLocation}=    set variable       xpath://form/div/label[contains(text(),'${fieldName}')]/ancestor::div[1]
     element should contain         ${fieldLocation}        ${errorMessage}
 
-User will see the successfully popup as: ${messageText}
+User will see the successfully popup as: "${messageText}"
     wait until element is visible    ${successPopup}
     element text should be    ${successPopup}     ${messageText}
 
