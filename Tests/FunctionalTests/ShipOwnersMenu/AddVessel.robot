@@ -118,9 +118,9 @@ Create new Vessel successfully without Transformation Date
     And User click Confirm button
     Then User will see the successfully popup as: "Successfully created the vessel."
 
-Create new Vessel successfully with Transformation Date
-    [Documentation]    This test case verify the create vessel with transformation date successfully
-    [Tags]    Function, Happy Case
+Create new Vessel successfully with Transformation Date in the past time
+    [Documentation]    This test case verify the create vessel with past transformation date successfully
+    [Tags]    Function, HappyCase
     Given User go to Ship Owner page
     And User clicks on the menu "VESSELS"
     When User click Create button
@@ -128,7 +128,38 @@ Create new Vessel successfully with Transformation Date
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email
-    And User select the date for Transformation Start Date
+    And User select the past date for Transformation Start Date
     And User click Submit button
     And User click Confirm button
     Then User will see the successfully popup as: "Successfully created the vessel."
+
+Create new Vessel successfully with Transformation Date in the future time
+    [Documentation]    This test case verify the create vessel with future transformation date successfully
+    [Tags]    Function, HappyCase
+    Given User go to Ship Owner page
+    And User clicks on the menu "VESSELS"
+    When User click Create button
+    And User select value no 2 in dropdown list for Vessel Class field
+    And User input into Vessel Name text field with value as "Vessel Test"
+    And User input into IMO No field (only number) with value contains 8 integers
+    And User input into Email field with valid email
+    And User select the future date for Transformation Start Date
+    And User click Submit button
+    And User click Confirm button
+    Then User will see the successfully popup as: "Successfully created the vessel."
+
+Create new Vessel successfully with Transformation Date as current date
+    [Documentation]    This test case verify the create vessel with future transformation date successfully
+    [Tags]    Function, HappyCase
+    Given User go to Ship Owner page
+    And User clicks on the menu "VESSELS"
+    When User click Create button
+    And User select value no 2 in dropdown list for Vessel Class field
+    And User input into Vessel Name text field with value as "Vessel Test"
+    And User input into IMO No field (only number) with value contains 8 integers
+    And User input into Email field with valid email
+    And User select the current date for Transformation Start Date
+    And User click Submit button
+    And User click Confirm button
+    Then User will see the successfully popup as: "Successfully created the vessel."
+

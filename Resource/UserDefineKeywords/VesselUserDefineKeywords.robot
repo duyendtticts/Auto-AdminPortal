@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Library    DateTime
 Variables    ../WebElements/shipOwnersElements.py
 Resource    ../CommonFiles/CommonFunctions.robot
 Resource    CommonUserDefineKeywords.robot
@@ -34,3 +35,14 @@ User select value no ${noItem} in dropdown list for Vessel Class field
 
 User select the ${periodTime} date for Transformation Start Date
     CommonUserDefineKeywords.User click dropdown list: Transformation Start Date
+#    ${currentDate}=     set variable    28
+#    ${currentMonth}=    set variable    2
+    ${currentDateTime}=     get current date    result_format=%m%d
+    ${currentMonth}=    get current date    result_format=%m
+    ${currentDate}=     get current date    result_format=%d
+    ${currentDate}=     Convert To Integer  ${currentDate}
+    ${currentMonth}=     Convert To Integer  ${currentMonth}
+    RUN KEYWORD IF    ${currentDate}==1        Select date based on first date in the month    ${periodTime}    ${currentDate}
+    ...    ELSE IF    ${currentDate}==28 and ${currentMonth}==2     Select date based on last date in the month     ${periodTime}    ${currentDate}
+    ...    ELSE IF    ${currentDate}==30       Select date based on last date in the month      ${periodTime}    ${currentDate}
+    ...    ELSE       Select date based on normal date is in the month          ${periodTime}    ${currentDate}
