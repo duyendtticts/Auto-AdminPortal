@@ -13,6 +13,14 @@ Click Ship Owner menu
     ${status}=  run keyword and return status    wait until page contains element    ${itemInTable}      10s
     register keyword to run on failure           ${status}
 
+#menu tab
+Click tab button
+    [Arguments]    ${menuButtonName}
+    ${menuButton}=  set variable    xpath://button[contains(., '${menuButtonName}')]
+    wait until element is visible    ${menuButton}  10s    ${menuButtonName} is not visibale after 10s
+    click button    ${menuButton}
+
+
 
 #date pickup
 Click previous button in calendar

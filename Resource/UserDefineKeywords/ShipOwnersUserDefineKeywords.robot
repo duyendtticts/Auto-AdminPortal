@@ -19,11 +19,17 @@ User go to Ship Owner page
 User clicks on the menu "${menuTabName}"
     wait until page contains element    ${vesselMenu}       20s
     ${menuName}=    builtin.get variable value    ${menuTabName}
-    BuiltIn.run keyword if      '${menuName}'=='VESSELS'                click button    ${vesselMenu}
-    ...      ELSE IF            '${menuName}'=='INFO'                   click button    ${infoMenu}
-    ...      ELSE IF            '${menuName}'=='VESSEL CLASSES'         click button    ${vesselClassesMenu}
-    ...      ELSE IF            '${menuName}'=='SETTINGS'               click button    ${settingsMenu}
+    BuiltIn.run keyword if      '${menuName}'=='VESSELS'                Click tab button    ${menuName}
+    ...      ELSE IF            '${menuName}'=='INFO'                   Click tab button    ${menuName}
+    ...      ELSE IF            '${menuName}'=='VESSEL CLASSES'         Click tab button    ${menuName}
+    ...      ELSE IF            '${menuName}'=='SETTINGS'               Click tab button    ${menuName}
     ...      ELSE               fail            Incorrect tab menu      [Return]
+
+#    BuiltIn.run keyword if      '${menuName}'=='VESSELS'                click button    ${vesselMenu}
+#    ...      ELSE IF            '${menuName}'=='INFO'                   click button    ${infoMenu}
+#    ...      ELSE IF            '${menuName}'=='VESSEL CLASSES'         click button    ${vesselClassesMenu}
+#    ...      ELSE IF            '${menuName}'=='SETTINGS'               click button    ${settingsMenu}
+#    ...      ELSE               fail            Incorrect tab menu      [Return]
 
 User will see the title "${titleOfTab}" with list of ${listItems}
     Page Should Contain     ${titleOfTab}

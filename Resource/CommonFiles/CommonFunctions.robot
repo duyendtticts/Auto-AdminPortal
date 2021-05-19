@@ -3,9 +3,11 @@ Library  SeleniumLibrary
 Library    Collections
 Resource  ../../TestData/config.robot
 Resource    ../PageObjects/LoginPage.robot
+Resource    WaitKeywords.robot
 
 
 *** Variables ***
+
 
 *** Keywords ***
 #Set up and down case
@@ -26,6 +28,7 @@ End TestCase
 End TestCase For All Browsers
     Close All Browsers
 
+
 #Click button
 User click ${buttonName} button
     ${buttonLocation}=  Set Variable       xpath://button[contains(.,'${buttonName}')]
@@ -37,7 +40,6 @@ User click ${buttonName} button
 #Assert element
 Title of ${formName} should be "${titleLabel}"
     ${titleLocator}=   set variable        xpath://h6[contains(text(), '${titleLabel}')]
-    wait until page contains element       ${titleLocator}      10s
     wait until element is visible          ${titleLocator}      10s
     element should contain      ${titleLocator}    ${titleLabel}
 
@@ -51,7 +53,22 @@ Set last date of month
     [Arguments]    ${currentMonth}
     ${oddMonthList} =   Create List   1    3    5    7   8    10    12
     ${evenMonthList}=   create list    4    6   9   11
-    ${oddMonth}=    run keyword and return status    List should contain value    ${oddMonthList}         ${currentMonth}
-    ${evenMonth}=      run keyword and return status    List should contain value    ${evenMonthList}         ${currentMonth}
+    ${oddMonth}=        run keyword and return status    List should contain value       ${oddMonthList}         ${currentMonth}
+    ${evenMonth}=       run keyword and return status    List should contain value       ${evenMonthList}        ${currentMonth}
 
 
+#get text
+Get the first item's Name in the list
+    [Arguments]    ${firstItemLocator}
+    wait until element is visible       ${firstItemLocator}     10s     No item found for first Vessel class name
+    ${firstItemName}=   get text             ${firstItemLocator}
+    set global variable    ${firstItemName}
+    [Return]    ${firstItemName}
+
+Get the text of ${fieldName}
+    [Documentation]
+    ${fieldLocation}=   set variable    xpath://p[contains(text(), '${fieldName}')]/following::p[1]
+    Retry to verify element 3 times
+    ${fieldValue}=  get text    ${fieldLocation}
+    set suite variable    ${fieldValue}
+    [Return]    ${fieldValue}

@@ -5,7 +5,9 @@ Library    DateTime
 Variables    ../WebElements/shipOwnersElements.py
 Resource    ../CommonFiles/CommonFunctions.robot
 Resource    CommonUserDefineKeywords.robot
-#Resource    CommonUserDefineKeywords.robot
+Resource    ../PageObjects/VesselPage.robot
+Resource    CommonUserDefineKeywords.robot
+Resource    ShipOwnersUserDefineKeywords.robot
 
 *** Variables ***
 
@@ -27,6 +29,23 @@ User will see the error message for required fields
     CommonUserDefineKeywords.Verify the error message of IMO No field should be "IMO No is required."
     CommonUserDefineKeywords.Verify the error message of Email field should be "Default vessel email is required."
     CommonUserDefineKeywords.Verify the error message of Vessel Class field should be "Vessel Class is required."
+
+User go to Vessel tab then open Create form
+    User go to Ship Owner page
+    User clicks on the menu "VESSELS"
+    User click Create button
+
+User go to Vessel tab then open Edit form
+    User go to Ship Owner page
+    User clicks on the menu "VESSELS"
+    Select first Item to edit
+
+Compare ${fieldName} of Vessel with one on Edit form
+    Get the text of Email
+    Get value of field in Update form   ${fieldName}
+    ${fieldValue}   should be equal    ${fieldValueOnUpdateForm}
+
+
 
 User select value no ${noItem} in dropdown list for Vessel Class field
     CommonUserDefineKeywords.User click dropdown list: Vessel Class
