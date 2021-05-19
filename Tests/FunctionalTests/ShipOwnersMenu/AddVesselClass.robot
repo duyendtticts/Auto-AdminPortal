@@ -20,18 +20,19 @@ Verify the Add New Vessel Class form
 
 Create Vessel Class fail with empty Vessel Class name
     [Documentation]    This case check creating vessel class with empty name
-    [Tags]    Function NegativeCase
+    [Tags]    Function    NegativeCase
     Given User go to Vessel Class then open Create new form
     When User click Submit button
     Then User will see the error message for Vessel class name field should be "Name is required."
 
-Create Vessel Class fail with Vessel Class name containing integer
+Create Vessel Class success with Vessel Class name containing integer
     [Documentation]    This case check creating vessel class with name containing integer
     [Tags]    Function    NegativeCase
     Given User go to Vessel Class then open Create new form
     When User input into Vessel class name text field with value as "Test 123"
     And User click Submit button
-    Then User will see the error message for Vessel class name field should be "Vessel class name must contain letters and space only"
+    And User click Confirm button
+    Then User will see the successfully popup as: "Successfully created the vessel class."
 
 Create Vessel Class fail with Vessel Class name containing special character
     [Documentation]    This case check creating vessel class with name containing special character
@@ -41,8 +42,8 @@ Create Vessel Class fail with Vessel Class name containing special character
     And User click Submit button
     Then User will see the error message for Vessel class name field should be "Vessel class name must contain letters and space only"
 
-Create Vessel class name successfully
-    [Documentation]    This test case verify the create vessel successfully
+Create Vessel class name with only letter successfully
+    [Documentation]    This test case verify creating new vessel class name with only letter
     [Tags]    Function    HappyCase
     Given User go to Vessel Class then open Create new form
     When User input into Vessel class name text field with value as "TEST"
