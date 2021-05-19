@@ -16,27 +16,21 @@ Test Teardown      CommonFunctions.End TestCase
 Verify Add Vessel form
     [Documentation]    This test case verify the create vessel form
     [Tags]    UI
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
+    Given User go to Vessel tab then open Create form
     Then User can verify the Create Vessel Form
 
 Create new Vessel with empty required fields
     [Documentation]    This test case verify the create vessel form
-    [Tags]    UI, Validation, Negative case
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User click Submit button
+    [Tags]    UI    Validation  NegativeCase
+    Given User go to Vessel tab then open Create form
+    When User click Submit button
     Then User will see the error message for required fields
 
 Create new Vessel with empty Vessel Name
     [Documentation]    This test case verify the create vessel form
-    [Tags]    UI, Validation, Negative case
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    UI    Validation  NegativeCase
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email
     And User click Submit button
@@ -44,11 +38,9 @@ Create new Vessel with empty Vessel Name
 
 Create new Vessel with empty IMO No
     [Documentation]    This test case verify the create vessel form
-    [Tags]    UI, Validation, Negative case
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    UI    Validation  NegativeCase
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into Email field with valid email
     And User click Submit button
@@ -56,11 +48,9 @@ Create new Vessel with empty IMO No
 
 Create new Vessel with empty email
     [Documentation]    This test case verify the create vessel form
-    [Tags]    UI, Validation, Negative case
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    UI    Validation    NegativeCase
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User click Submit button
@@ -68,11 +58,9 @@ Create new Vessel with empty email
 
 Create new Vessel with empty Vessel Class
     [Documentation]    This test case verify the create vessel form with empty Vessel Class
-    [Tags]    UI, Validation, Negative case
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User input into Vessel Name text field with value as "Vessel Test"
+    [Tags]    UI    Validation    NegativeCase
+    Given User go to Vessel tab then open Create form
+    When User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email
     And User click Submit button
@@ -80,11 +68,9 @@ Create new Vessel with empty Vessel Class
 
 Create new Vessel with invalid email
     [Documentation]    This test case verify the create vessel form with invalid email
-    [Tags]    Function, Validation
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    Function    Validation    NegativeCase
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with invalid format email
@@ -93,11 +79,9 @@ Create new Vessel with invalid email
 
 Create new Vessel with invalid domain email
     [Documentation]    This test case verify the create vessel form with invalid email
-    [Tags]    Function, Validation
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    Function   Validation     NegativeCase
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with invalid domain email
@@ -106,11 +90,9 @@ Create new Vessel with invalid domain email
 
 Create new Vessel successfully without Transformation Date
     [Documentation]    This test case verify the create vessel successfully
-    [Tags]    Function, Happy Case
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    Function   Happy Case
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email
@@ -120,11 +102,9 @@ Create new Vessel successfully without Transformation Date
 
 Create new Vessel successfully with Transformation Date in the past time
     [Documentation]    This test case verify the create vessel with past transformation date successfully
-    [Tags]    Function, HappyCase
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    Function   HappyCase
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email
@@ -135,11 +115,9 @@ Create new Vessel successfully with Transformation Date in the past time
 
 Create new Vessel successfully with Transformation Date in the future time
     [Documentation]    This test case verify the create vessel with future transformation date successfully
-    [Tags]    Function, HappyCase
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    Function   HappyCase
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email
@@ -150,11 +128,9 @@ Create new Vessel successfully with Transformation Date in the future time
 
 Create new Vessel successfully with Transformation Date as current date
     [Documentation]    This test case verify the create vessel with future transformation date successfully
-    [Tags]    Function, HappyCase
-    Given User go to Ship Owner page
-    And User clicks on the menu "VESSELS"
-    When User click Create button
-    And User select value no 2 in dropdown list for Vessel Class field
+    [Tags]    Function  HappyCase
+    Given User go to Vessel tab then open Create form
+    When User select value no 2 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email

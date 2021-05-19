@@ -1,13 +1,18 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
-#Resource    ../CommonFiles/CommonFunctions.robot
+Resource    ../CommonFiles/CommonFunctions.robot
 
 *** Variables ***
 &{validDomain}=    domain1=es-sea.com  domain2=eaglestar.com.my    domain3=sparescnx.com
 ${invalidDomain}=   google.com
 
 *** Keywords ***
+#common keyword
+Select first Item to edit
+    click element    ${firstNameInList}
+    User click Edit button
+
 #reload page
 User try to reload the page
     Reload Page
@@ -42,7 +47,7 @@ User input into ${emailField} field with ${typeOfEmail} email
     ${validEmail}=              set variable    AutoTest_Email_${randomString}@${validDomain.domain2}
     ${invalidFormatOfEmail}=    set variable    AutoTest_Email_${randomString}${validDomain.domain2}
     ${invalidDomainEmail}=      set variable    AutoTest_Email_${randomString}@${invalidDomain}
-    RUN KEYWORD IF    '${typeOfEmail}' == 'valid'     input text      ${inputField}       ${validEmail}
+    RUN KEYWORD IF          '${typeOfEmail}' == 'valid'     input text      ${inputField}       ${validEmail}
     ...         ELSE IF    '${typeOfEmail}' == 'invalid format'    input text      ${inputField}       ${invalidFormatOfEmail}
     ...         ELSE IF    '${typeOfEmail}' == 'invalid domain'    input text      ${inputField}       ${invalidDomainEmail}
     ...         ELSE         fail        No result for this case
@@ -51,12 +56,14 @@ User input into ${emailField} field with ${typeOfEmail} email
 # Verify cases
 User will see the error message for ${fieldName} field should be "${errorMessage}"
     [Documentation]
-    ${fieldLocation}=    set variable       xpath://form/div/label[contains(text(),'${fieldName}')]/ancestor::div[1]
-    element should contain         ${fieldLocation}        ${errorMessage}
+    ${fieldLocation}=    set variable       xpath://label[contains(text(), '${fieldName}')]/following-sibling::p
+      #//form/div/label[contains(text(),'${fieldName}')]/ancestor::div[1]
+    wait until element is visible       ${fieldLocation}    10s     Error message location not found
+    element should contain              ${fieldLocation}        ${errorMessage}
 
-User will see the successfully popup as: "${messageText}"
-    wait until element is visible    ${successPopup}
-    element text should be    ${successPopup}     ${messageText}
+User will see the ${typeOfMesssage} popup as: "${messageText}"
+    wait until element is visible    ${messagePopup}
+    element text should be    ${messagePopup}     ${messageText}
 
 #Verify common form
 Verify the title of ${fieldName} field in the form should be ${titleText}
@@ -64,11 +71,18 @@ Verify the title of ${fieldName} field in the form should be ${titleText}
     element should contain           ${titleOfFormLocation}     ${titleText}
 
 Verify the label of ${fieldName} field should be "${labelText}"
-    ${fieldLocation}=   set variable       xpath://form/div[contains(.,'${fieldName}')]
+    ${fieldLocation}=   set variable       xpath://div/label[contains(text(),'${fieldName}')]
+#    xpath://form/div[contains(.,'${fieldName}')]
     wait until element is visible           ${fieldLocation}
     element should contain        ${fieldLocation}        ${labelText}
 
 Verify the error message of ${fieldName} field should be "${errorMessage}"
-    ${fieldLocation}=    set variable       xpath://form/div[contains(.,'${fieldName}')]/child::p
+    ${fieldLocation}=    set variable       xpath://div/label[contains(text(),'${fieldName}')]/child::p
+#    xpath://form/div[contains(.,'${fieldName}')]/child::p
     wait until element is visible           ${fieldLocation}        10s
     element should contain         ${fieldLocation}        ${errorMessage}
+
+# Check existed item
+It existed an ${itemName} on the ${listName} list
+    ${itemLocator}=     set variable    xpath://tbody[contains(.,'Name')]/child::tr[1]/child::td[2]/div[2]
+    Get the first item's Name in the list

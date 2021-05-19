@@ -9,8 +9,8 @@ settingsMenu="xpath://span[contains(., 'SETTINGS')]"
 itemInTable =   "xpath://*[starts-with(@id,'mui-')]/following::p"
 firstItemOfTable =  "xpath://table[@role='grid']/tbody/tr/td[1]"
 
-#Vessel Class
-createVesselClassButton = "xpath://h2[contains(text(),'Vessel Classes')]/ancestor::div[3]/child::div[1]/button"
+
+
 
 
 #Vessel Tab
