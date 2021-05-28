@@ -60,8 +60,8 @@ Select date based on normal date is in the month
     [Arguments]    ${selectedDate}      ${currentDate}
     ${pastDate}=   Evaluate     ${currentDate}-1
     ${futureDate}=  evaluate    ${currentDate}+1
-    run keyword if      '${selectedDate}'=='past'     click button    xpath://span[text()='${pastDate}']/ancestor::button
-    ...     ELSE IF     '${selectedDate}'=='future'   click button    xpath://span[text()='${futureDate}']/ancestor::button
+    run keyword if      '${selectedDate}'=='past'     click button    xpath://*[text()='${pastDate}']/ancestor::button[@class='rdrDay']
+    ...     ELSE IF     '${selectedDate}'=='future'   click button    xpath://*[text()='${futureDate}']/ancestor::button[@class='rdrDay']
     ...     ELSE IF     '${selectedDate}'=='current'   click button    xpath://span[text()='${currentDate}']/ancestor::button
     ...     ELSE        fail    Date is not invalid value. Should select past, current or future date only
 

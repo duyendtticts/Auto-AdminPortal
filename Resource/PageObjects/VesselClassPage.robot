@@ -4,6 +4,7 @@ Library    DateTime
 Library    String
 Variables    ../WebElements/vesselClassElements.py
 Resource    ../CommonFiles/CommonFunctions.robot
+Resource    ../CommonFiles/GetKeywords.robot
 
 *** Variables ***
 
@@ -14,12 +15,12 @@ Input ${inputData} into Vessel Name field
     mouse out       ${vesselNameTextBox}
 
 Get element xpath of item no #${noItem} in the Vessel Class list
-    ${vesselClassNameLocator}=  set variable    firstVesselClassNameInList= "xpath://tbody[contains(.,'Name')]/child::tr[${noItem}]/child::td[2]/div[2]"
+    ${vesselClassNameLocator}=  set variable    xpath://tbody[contains(.,'Name')]/child::tr[${noItem}]/child::td[2]/div[2]
     [Return]    ${vesselClassNameLocator}
 
 Input existed Vessel class name
     Get element xpath of item no #2 in the Vessel Class list
-    Get the first item's Name in the list       ${vesselClassNameLocator}
+    Get the first item's Name in the list       ${firstVesselClassNameInList}
     input text      ${vesselNameTextBox}       ${firstItemName}
     mouse out       ${vesselNameTextBox}
 

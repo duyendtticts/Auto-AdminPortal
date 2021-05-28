@@ -1,9 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../../../Resource/UserDefineKeywords/ShipOwnersUserDefineKeywords.robot
 Resource    ../../../Resource/CommonFiles/CommonFunctions.robot
-Resource    ../../../Resource/UserDefineKeywords/CommonUserDefineKeywords.robot
-Resource    ../../../Resource/UserDefineKeywords/VesselClassUserDefineKeywords.robot
+Resource    ../../../Resource/TestCaseInKeyWords/ShipOwners-VesselClass/AddVesselClassTestCase.robot
+Resource    ../../../Resource/CommonFiles/RunTestCaseKeywords.robot
 
 Test Setup         CommonFunctions.Start TestCase With Login
 Test Teardown      CommonFunctions.End TestCase
@@ -15,78 +14,44 @@ Test Teardown      CommonFunctions.End TestCase
 Verify the Add New Vessel Class form
     [Documentation]    This test case verify the create vessel form
     [Tags]    UI
-    Given User go to Vessel Class then open Create new form
-    Then User can verify the Create Vessel Form
+    Execute TestCase    Verify the Add New Vessel Class form
 
 Create Vessel Class fail with empty Vessel Class name
     [Documentation]    This case check creating vessel class with empty name
     [Tags]    Function    NegativeCase
-    Given User go to Vessel Class then open Create new form
-    When User click Submit button
-    Then User will see the error message for Vessel class name field should be "Name is required."
+    Execute TestCase   Create Vessel Class with empty Vessel Class name
 
 Create Vessel Class success with Vessel Class name containing integer
     [Documentation]    This case check creating vessel class with name containing integer
     [Tags]    Function    NegativeCase
-    Given User go to Vessel Class then open Create new form
-    When User input into Vessel class name text field with value as "Test 123"
-    And User click Submit button
-    And User click Confirm button
-    Then User will see the successfully popup as: "Successfully created the vessel class."
+    Execute TestCase   Create VesselClass with Vessel Class name containing integer
 
 Create Vessel Class fail with Vessel Class name containing special character
     [Documentation]    This case check creating vessel class with name containing special character
     [Tags]    Function    NegativeCase
-    Given User go to Vessel Class then open Create new form
-    When User input into Vessel class name text field with value as "Test %"
-    And User click Submit button
-    Then User will see the error message for Vessel class name field should be "Vessel class name must contain letters and space only"
+    Execute TestCase    Create Vessel Class with Vessel Class name containing special character
 
 Create Vessel class name with only letter successfully
     [Documentation]    This test case verify creating new vessel class name with only letter
     [Tags]    Function    HappyCase
-    Given User go to Vessel Class then open Create new form
-    When User input into Vessel class name text field with value as "TEST"
-    And User click Submit button
-    And User click Confirm button
-    Then User will see the successfully popup as: "Successfully created the vessel class."
+    Execute TestCase    Create Vessel class name with only letter
 
 Create Vessel class fail with existed name on the list
     [Documentation]    This case check creating vessel class with existed name
     [Tags]    Function  NegativeCase
-    Given Given User go to Vessel Class then open Create new form
-    And It existed an vessel class name on the list
-    When User input into Vessel class name text field with existed value on the list
-    And User click Submit button
-    And User click Confirm button
-    Then User will see the error popup as: "Vessel Class already exists"
+    Execute TestCase    Create Vessel class with existed name on the list
 
 Create Vessel class fail with existed name in lower case on the list
     [Documentation]    This case check creating vessel class with existed name in lower case
     [Tags]    Function  NegativeCase
-    Given Given User go to Vessel Class then open Create new form
-    And It existed an vessel class name on the list
-    When User input into Vessel class name text field with existed value on the list
-    And User click Submit button
-    And User click Confirm button
-    Then User will see the error popup as: "Vessel Class already exists"
+    Execute TestCase    Create Vessel class with existed name in lower case on the list
 
 Create Vessel class fail with existed name on the list and space
     [Documentation]    This case check creating vessel class with existed name
     [Tags]    Function  NegativeCase
-    Given User go to Vessel Class then open Create new form
-    And It existed an vessel class name on the list
-    When User input into Vessel class name text field with existed name contains space before on the list
-    And User click Submit button
-    And User click Confirm button
-    Then User will see the error popup as: "Vessel Class already exists"
+    Execute TestCase    Create Vessel class with existed name on the list and space
 
-Create Vessel class fail with space before existed name on the list and space
+Create Vessel class fail with space before existed name on the list contains space
     [Documentation]    This case check creating vessel class with existed name with space at the begin of name
     [Tags]    Function  NegativeCase
-    Given Given User go to Vessel Class then open Create new form
-    And It existed an vessel class name on the list
-    When User input into Vessel class name text field with spaces and existed name on the list
-    And User click Submit button
-    And User click Confirm button
-    Then User will see the error popup as: "Vessel Class already exists"
+    Execute TestCase    Create Vessel class with space before existed name on the list contains space
