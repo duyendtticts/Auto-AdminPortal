@@ -4,6 +4,7 @@ Library    String
 Variables    ../WebElements/shipOwnersElements.py
 Variables    ../WebElements/vesselClassElements.py
 Resource    ../CommonFiles/CommonFunctions.robot
+Resource    ../CommonFiles/GetTasks.robot
 Resource    CommonUserDefineKeywords.robot
 Resource    ../PageObjects/VesselClassPage.robot
 Resource    CommonUserDefineKeywords.robot
@@ -18,6 +19,7 @@ User can verify the Create Vessel Form
     CommonUserDefineKeywords.Verify the label of Vessel class name field should be "Vessel class name"
     CommonFunctions.Form should contain button: "Cancel"
     CommonFunctions.Form should contain button: "Submit"
+    User click Cancel button
 
 User go to Vessel Class then open Create new form
     User go to Ship Owner page
@@ -32,12 +34,12 @@ It existed an vessel class name on the list
     Get the first item's Name in the list       ${firstNameInList}
 
 
-User input into Vessel class name text field with ${typeOfInputData} on the list
+User input into Vessel class name text field with ${inputData} on the list
     [Documentation]    use for input existed name into Vessel class name
     ${vesselClassName}=    get variable value    ${firstItemName}
-    run keyword if  "${typeOfInputData}"=="existed value"    Input existed Vessel class name
-    ...    ELSE IF  "before" in "${typeOfInputData}" and "space" in "${typeOfInputData}"   Input existed vessel class name contains space before it
-    ...    ELSE IF  "after" in "${typeOfInputData}" and "space" in "${typeOfInputData}"    Input existed vessel class name contains space after it
-    ...    ELSE IF  "and" in "${typeOfInputData}" and "space" in "${typeOfInputData}"      Input existed vessel class name contains spaces before and after it
+    run keyword if  "${inputData}"=="existed value"    Input existed Vessel class name
+    ...    ELSE IF  "before" in "${inputData}" and "space" in "${inputData}"   Input existed vessel class name contains space before it
+    ...    ELSE IF  "after" in "${inputData}" and "space" in "${inputData}"    Input existed vessel class name contains space after it
+    ...    ELSE IF  "contains" in "${inputData}" and "space" in "${inputData}"      Input existed vessel class name contains spaces before and after it
     ...    ELSE     fail     Just have 4 cases as: space before, space after, space and, existed value
 

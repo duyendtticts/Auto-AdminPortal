@@ -2,6 +2,9 @@
 Library    SeleniumLibrary
 Library    String
 Resource    ../CommonFiles/CommonFunctions.robot
+Resource    ../CommonFiles/GetTasks.robot
+Resource    ../CommonFiles/InputTasks.robot
+Variables    ../WebElements/vesselElements.py
 
 *** Variables ***
 &{validDomain}=    domain1=es-sea.com  domain2=eaglestar.com.my    domain3=sparescnx.com
@@ -10,6 +13,7 @@ ${invalidDomain}=   google.com
 *** Keywords ***
 #common keyword
 Select first Item to edit
+    Retry to verify element 3 times     ${firstNameInList}
     click element    ${firstNameInList}
     User click Edit button
 
@@ -41,17 +45,15 @@ User input into ${fieldName} field (only number) with value contains ${no} integ
     mouse out       ${inputField}
 
 User input into ${emailField} field with ${typeOfEmail} email
-    [Documentation]    use for email input field
+    [Documentation]    use for email input field in add new vessel form
     ${inputField}=      set variable    xpath://label[contains(text(), '${emailField}')]/following-sibling::div/input
-    ${randomString}=    generate random string    6     [NUMBERS]
-    ${validEmail}=              set variable    AutoTest_Email_${randomString}@${validDomain.domain2}
-    ${invalidFormatOfEmail}=    set variable    AutoTest_Email_${randomString}${validDomain.domain2}
-    ${invalidDomainEmail}=      set variable    AutoTest_Email_${randomString}@${invalidDomain}
-    RUN KEYWORD IF          '${typeOfEmail}' == 'valid'     input text      ${inputField}       ${validEmail}
-    ...         ELSE IF    '${typeOfEmail}' == 'invalid format'    input text      ${inputField}       ${invalidFormatOfEmail}
-    ...         ELSE IF    '${typeOfEmail}' == 'invalid domain'    input text      ${inputField}       ${invalidDomainEmail}
-    ...         ELSE         fail        No result for this case
-    mouse out    ${inputField}
+    Input email value       ${inputField}       ${typeOfEmail}
+
+Edit email value with email value
+    [Documentation]    use for email input field in add new vessel form
+    [Arguments]    ${inputData}
+    ${typeOfEmail}=     set variable    ${inputData}
+    Input email value       ${emailInput}      ${typeOfEmail}
 
 # Verify cases
 User will see the error message for ${fieldName} field should be "${errorMessage}"
@@ -77,7 +79,8 @@ Verify the label of ${fieldName} field should be "${labelText}"
     element should contain        ${fieldLocation}        ${labelText}
 
 Verify the error message of ${fieldName} field should be "${errorMessage}"
-    ${fieldLocation}=    set variable       xpath://div/label[contains(text(),'${fieldName}')]/child::p
+    #{fieldLocation}=    set variable       xpath://div/label[contains(text(),'${fieldName}')]/child::p
+    ${fieldLocation}=    set variable       xpath://label[contains(text(),'${fieldName}')]/parent::div/descendant::p
 #    xpath://form/div[contains(.,'${fieldName}')]/child::p
     wait until element is visible           ${fieldLocation}        10s
     element should contain         ${fieldLocation}        ${errorMessage}

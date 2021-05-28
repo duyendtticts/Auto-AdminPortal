@@ -14,3 +14,4 @@ countlyMenu = "xpath://*[contains(text(),'Countly')]/ancestor::div[2]"
 
 #table
 firstNameInList = "xpath://tbody[contains(.,'Name')]/child::tr[1]/child::td[2]/div[2]"
+searchButton= "xpath://button[@title='Search']"

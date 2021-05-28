@@ -57,18 +57,8 @@ Set last date of month
     ${evenMonth}=       run keyword and return status    List should contain value       ${evenMonthList}        ${currentMonth}
 
 
-#get text
-Get the first item's Name in the list
-    [Arguments]    ${firstItemLocator}
-    wait until element is visible       ${firstItemLocator}     10s     No item found for first Vessel class name
-    ${firstItemName}=   get text             ${firstItemLocator}
-    set global variable    ${firstItemName}
-    [Return]    ${firstItemName}
 
-Get the text of ${fieldName}
-    [Documentation]
-    ${fieldLocation}=   set variable    xpath://p[contains(text(), '${fieldName}')]/following::p[1]
-    Retry to verify element 3 times
-    ${fieldValue}=  get text    ${fieldLocation}
-    set suite variable    ${fieldValue}
-    [Return]    ${fieldValue}
+
+
+
+
