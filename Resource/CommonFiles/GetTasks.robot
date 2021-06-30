@@ -20,8 +20,8 @@ Get value of a fieldName
     [Documentation]    get data value of a field name
     Retry to verify element 3 times         ${fieldLocator}
     ${fieldValue}=      get text    ${fieldLocator}
-    set variable        ${fieldValue}
-    [Return]            ${fieldValue}
+    set suite variable              ${fieldValue}
+    [Return]                        ${fieldValue}
 
 Get the text of ${fieldName}
     [Documentation]    get text of field name of first row in a form

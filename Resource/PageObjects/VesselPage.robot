@@ -34,3 +34,12 @@ Edit email field
     [Documentation]     input value into Email field
     [Arguments]        ${inputValue}
     input text      ${emailInput}        ${inputValue}
+
+Show success message
+    [Documentation]
+    [Arguments]    ${message}
+    element text should be      ${successPopup}     ${message}
+
+Verify that email is updated with new value successfully
+    [Documentation]    check email on info page with the update value after editing
+    [Arguments]         ${inputEmail}

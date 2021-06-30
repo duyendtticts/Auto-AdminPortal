@@ -4,7 +4,7 @@ Library    Collections
 Library    String
 Resource  ../../TestData/config.robot
 Resource    CommonFunctions.robot
-Resource    GetKeywords.robot
+Resource    GetTasks.robot
 
 *** Variables ***
 
@@ -16,10 +16,12 @@ Input email value
     ${validEmail}=              set variable    AutoTest_Email_${randomString}@${validDomain.domain2}
     ${invalidFormatOfEmail}=    set variable    AutoTest_Email_${randomString}${validDomain.domain2}
     ${invalidDomainEmail}=      set variable    AutoTest_Email_${randomString}@${invalidDomain}
-    RUN KEYWORD IF          '${typeOfEmail}' == 'valid'     input text      ${inputField}       ${validEmail}
-    ...         ELSE IF    '${typeOfEmail}' == 'invalid format'    input text      ${inputField}       ${invalidFormatOfEmail}
-    ...         ELSE IF    '${typeOfEmail}' == 'invalid domain'    input text      ${inputField}       ${invalidDomainEmail}
-    ...         ELSE IF     '${typeOfEmail}' == 'existed email'     input text      ${inputField}      ${existedEmail}
+    ${lackOfDomain}=            set variable    AutoTest_Email_${randomString}@
+    RUN KEYWORD IF         '${typeOfEmail}' == 'validEmail'                 input text      ${inputField}       ${validEmail}
+    ...         ELSE IF    '${typeOfEmail}' == 'invalidFormatOfEmail'       input text      ${inputField}       ${invalidFormatOfEmail}
+    ...         ELSE IF    '${typeOfEmail}' == 'invalidDomainEmail'         input text      ${inputField}       ${invalidDomainEmail}
+    ...         ELSE IF    '${typeOfEmail}' == 'existedEmail'               input text      ${inputField}       ${existedEmail}
+    ...         ELSE IF    '${typeOfEmail}'=='lackOfDomain'                 input text      ${emailInput}       ${lackOfDomain}
     ...         ELSE         fail        No result for this case
     mouse out    ${inputField}
 

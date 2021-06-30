@@ -18,12 +18,12 @@ Verify Edit Vessel form
 Update Vessel with existed email
     [Documentation]
     [Tags]      Function    NegativeCase
-    Execute TestCase    Edit existed email of Vessel
+    Execute TestCase    Update with existed email on the Vessel list
 
 Update Vessel with empty email
     [Documentation]
     [Tags]
-
+    Execute TestCase    Update Vessel with empty email
 Update Vessel with invalid email - lack of domain
     [Documentation]
     [Tags]

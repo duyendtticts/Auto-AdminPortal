@@ -71,12 +71,14 @@ User select the ${periodTime} date for Transformation Start Date
     ...    ELSE IF    ${currentDate}==30       Select date based on last date in the month      ${periodTime}    ${currentDate}
     ...    ELSE       Select date based on normal date is in the month          ${periodTime}    ${currentDate}
 
-Exist an email that is used for other item on the list
+Exist an email that is used for any item on the list
     [Documentation]    get the text of email field on first item
-    Get value of a fieldName        ${firstEmailInList}
+    ${randomNo}=        generate random string    1     [NUMBERS]
+    run keyword if    '${randomNo}'=='1'
+    ...
+    ${emailLocator}=        set variable    xpath://tbody/tr[${randomNo}]/td[5]/div[2]
+    Get value of a fieldName        ${emailLocator}
+    [Return]        ${fieldValue}
 
-User edit the email with value: ${typeOfEmail}
-    [Documentation]
-    ${inputEmail}=      set variable    ${typeOfEmail}
-    Edit email value with email value       ${inputEmail}
+
 
