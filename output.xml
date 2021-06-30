@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.1 (Python 3.8.5 on win32)" generated="20210527 17:04:42.117" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0.1 (Python 3.8.5 on win32)" generated="20210630 11:23:52.567" rpa="false" schemaversion="2">
 <suite id="s1" name="Auto-AdminPortal" source="C:\Users\User\Documents\GitHub\Auto-AdminPortal">
 <suite id="s1-s1" name="Tests" source="C:\Users\User\Documents\GitHub\Auto-AdminPortal\Tests">
 <suite id="s1-s1-s1" name="FunctionalTests" source="C:\Users\User\Documents\GitHub\Auto-AdminPortal\Tests\FunctionalTests">
 <suite id="s1-s1-s1-s1" name="ShipOwnersMenu" source="C:\Users\User\Documents\GitHub\Auto-AdminPortal\Tests\FunctionalTests\ShipOwnersMenu">
 <suite id="s1-s1-s1-s1-s1" name="EditVessel" source="C:\Users\User\Documents\GitHub\Auto-AdminPortal\Tests\FunctionalTests\ShipOwnersMenu\EditVessel.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="Verify Edit Vessel form">
+<test id="s1-s1-s1-s1-s1-t1" name="Update Vessel with existed email">
 <kw name="Start TestCase With Login" library="CommonFunctions" type="SETUP">
 <kw name="Start TestCase" library="CommonFunctions">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url.${env}}</arg>
+<arg>${url.mp}</arg>
 <arg>${browser}</arg>
 <arg>executable_path=${executable_path}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210527 17:04:42.534" level="INFO">Opening browser 'chrome' to base url 'https://admin.dev.sparescnx.com/'.</msg>
-<status status="PASS" starttime="20210527 17:04:42.532" endtime="20210527 17:04:45.967"/>
+<msg timestamp="20210630 11:23:52.991" level="INFO">Opening browser 'chrome' to base url 'https://admin-mp.dev.sparescnx.com/'.</msg>
+<status status="PASS" starttime="20210630 11:23:52.989" endtime="20210630 11:23:58.580"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210527 17:04:45.967" endtime="20210527 17:04:46.116"/>
+<status status="PASS" starttime="20210630 11:23:58.581" endtime="20210630 11:23:58.715"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:42.532" endtime="20210527 17:04:46.117"/>
+<status status="PASS" starttime="20210630 11:23:52.989" endtime="20210630 11:23:58.716"/>
 </kw>
 <kw name="Login to Admin Portal Successfully" library="LoginPage">
-<arg>${username.user1}</arg>
-<arg>${password}</arg>
+<arg>${username.mpUser}</arg>
+<arg>${password.mppd}</arg>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${userNameField}</arg>
 <arg>${username}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:46.124" level="INFO">Typing password into text field 'xpath://*[@id='username']'.</msg>
-<msg timestamp="20210527 17:04:46.190" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20210527 17:04:46.293" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20210527 17:04:46.124" endtime="20210527 17:04:46.293"/>
+<msg timestamp="20210630 11:23:58.725" level="INFO">Typing password into text field 'xpath://*[@id='username']'.</msg>
+<msg timestamp="20210630 11:23:58.819" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210630 11:23:58.924" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210630 11:23:58.724" endtime="20210630 11:23:58.924"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${passwordField}</arg>
 <arg>${password}</arg>
 <arg>clear: True</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:46.294" level="INFO">Typing password into text field 'xpath://*[@id='password']'.</msg>
-<msg timestamp="20210527 17:04:46.338" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20210527 17:04:46.429" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20210527 17:04:46.294" endtime="20210527 17:04:46.429"/>
+<msg timestamp="20210630 11:23:58.925" level="INFO">Typing password into text field 'xpath://*[@id='password']'.</msg>
+<msg timestamp="20210630 11:23:58.961" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210630 11:23:59.036" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210630 11:23:58.924" endtime="20210630 11:23:59.037"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${signInbutton}</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20210527 17:04:46.431" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='password']/ancestor::div[2]/following-sibling::button element.</msg>
-<msg timestamp="20210527 17:04:51.755" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20210527 17:04:51.755" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20210527 17:04:46.430" endtime="20210527 17:04:51.778"/>
+<msg timestamp="20210630 11:23:59.038" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id='password']/ancestor::div[2]/following-sibling::button element.</msg>
+<msg timestamp="20210630 11:23:59.358" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210630 11:23:59.358" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210630 11:23:59.037" endtime="20210630 11:23:59.379"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:46.118" endtime="20210527 17:04:51.778"/>
+<status status="PASS" starttime="20210630 11:23:58.716" endtime="20210630 11:23:59.379"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${status}</var>
@@ -63,42 +63,43 @@
 <kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
 <arg>${signInbutton}</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" starttime="20210527 17:04:51.779" endtime="20210527 17:04:52.476"/>
+<status status="PASS" starttime="20210630 11:23:59.379" endtime="20210630 11:24:00.098"/>
 </kw>
-<msg timestamp="20210527 17:04:52.476" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20210527 17:04:51.779" endtime="20210527 17:04:52.476"/>
+<msg timestamp="20210630 11:24:00.098" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20210630 11:23:59.379" endtime="20210630 11:24:00.098"/>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <arg>${status}</arg>
 <arg>fail</arg>
 <arg>Login failed. Setup for test could not established</arg>
 <doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
-<status status="PASS" starttime="20210527 17:04:52.477" endtime="20210527 17:04:52.477"/>
+<status status="PASS" starttime="20210630 11:24:00.099" endtime="20210630 11:24:00.099"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:42.531" endtime="20210527 17:04:52.477"/>
+<status status="PASS" starttime="20210630 11:23:52.988" endtime="20210630 11:24:00.099"/>
 </kw>
 <kw name="Execute TestCase" library="RunTestCaseKeywords">
-<arg>Verify Edit Vessel form</arg>
+<arg>Update with existed email on the Vessel list</arg>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${testCaseStatus}</var>
 <arg>${testCaseName}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Verify Edit Vessel form" library="EditVesselTestCase">
-<tag>UI</tag>
-<tag>Validation</tag>
-<kw name="Given User go to Vessel tab then open Edit form" library="VesselUserDefineKeywords">
+<kw name="Update with existed email on the Vessel list" library="EditVesselTestCase">
+<tag>Function</tag>
+<tag>NegativeCase</tag>
+<doc>use existed email on the Vessel list to update</doc>
+<kw name="Given User go to Vessel page" library="VesselUserDefineKeywords">
 <kw name="User go to Ship Owner page" library="ShipOwnersUserDefineKeywords">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${shipOwnersMenu}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210527 17:04:52.480" endtime="20210527 17:04:52.753"/>
+<status status="PASS" starttime="20210630 11:24:00.103" endtime="20210630 11:24:00.344"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${shipOwnersMenu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:52.754" level="INFO">Clicking element 'xpath://div[@role='button' and contains(.,'Ship Owners')]'.</msg>
-<status status="PASS" starttime="20210527 17:04:52.753" endtime="20210527 17:04:52.825"/>
+<msg timestamp="20210630 11:24:00.345" level="INFO">Clicking element 'xpath://div[@role='button' and contains(.,'Ship Owners')]'.</msg>
+<status status="PASS" starttime="20210630 11:24:00.345" endtime="20210630 11:24:00.415"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${passed}</var>
@@ -110,24 +111,24 @@
 <arg>${itemInTable}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210527 17:04:52.825" endtime="20210527 17:04:53.955"/>
+<status status="PASS" starttime="20210630 11:24:00.416" endtime="20210630 11:24:01.308"/>
 </kw>
-<msg timestamp="20210527 17:04:53.956" level="INFO">${passed} = True</msg>
-<status status="PASS" starttime="20210527 17:04:52.825" endtime="20210527 17:04:53.956"/>
+<msg timestamp="20210630 11:24:01.309" level="INFO">${passed} = True</msg>
+<status status="PASS" starttime="20210630 11:24:00.415" endtime="20210630 11:24:01.309"/>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <arg>${passed}</arg>
 <arg>fail</arg>
 <arg>The list of ship owners could not shown after 10s waiting</arg>
 <doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
-<status status="PASS" starttime="20210527 17:04:53.956" endtime="20210527 17:04:53.956"/>
+<status status="PASS" starttime="20210630 11:24:01.309" endtime="20210630 11:24:01.309"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${totalItem}</var>
 <arg>${itemInTable}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:53.992" level="INFO">${totalItem} = 1-1 of 1</msg>
-<status status="PASS" starttime="20210527 17:04:53.956" endtime="20210527 17:04:53.992"/>
+<msg timestamp="20210630 11:24:01.331" level="INFO">${totalItem} = 1-2 of 2</msg>
+<status status="PASS" starttime="20210630 11:24:01.310" endtime="20210630 11:24:01.331"/>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <arg>'${totalItem}'== '0-0 of 0'</arg>
@@ -137,26 +138,26 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${firstItemOfTable}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:53.993" level="INFO">Clicking element 'xpath://table[@role='grid']/tbody/tr/td[1]'.</msg>
-<status status="PASS" starttime="20210527 17:04:53.993" endtime="20210527 17:04:54.064"/>
+<msg timestamp="20210630 11:24:01.332" level="INFO">Clicking element 'xpath://table[@role='grid']/tbody/tr/td[1]'.</msg>
+<status status="PASS" starttime="20210630 11:24:01.332" endtime="20210630 11:24:01.396"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:53.992" endtime="20210527 17:04:54.064"/>
+<status status="PASS" starttime="20210630 11:24:01.331" endtime="20210630 11:24:01.396"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:52.480" endtime="20210527 17:04:54.065"/>
+<status status="PASS" starttime="20210630 11:24:00.102" endtime="20210630 11:24:01.397"/>
 </kw>
 <kw name="User clicks on the menu &quot;VESSELS&quot;" library="ShipOwnersUserDefineKeywords" sourcename="User clicks on the menu &quot;${menuTabName}&quot;">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${vesselMenu}</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210527 17:04:54.066" endtime="20210527 17:04:54.732"/>
+<status status="PASS" starttime="20210630 11:24:01.398" endtime="20210630 11:24:01.856"/>
 </kw>
 <kw name="Get Variable Value" library="BuiltIn">
 <var>${menuName}</var>
 <arg>${menuTabName}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<msg timestamp="20210527 17:04:54.733" level="INFO">${menuName} = VESSELS</msg>
-<status status="PASS" starttime="20210527 17:04:54.732" endtime="20210527 17:04:54.733"/>
+<msg timestamp="20210630 11:24:01.857" level="INFO">${menuName} = VESSELS</msg>
+<status status="PASS" starttime="20210630 11:24:01.856" endtime="20210630 11:24:01.857"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>'${menuName}'=='VESSELS'</arg>
@@ -185,29 +186,83 @@
 <var>${menuButton}</var>
 <arg>xpath://button[contains(., '${menuButtonName}')]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210527 17:04:54.735" level="INFO">${menuButton} = xpath://button[contains(., 'VESSELS')]</msg>
-<status status="PASS" starttime="20210527 17:04:54.734" endtime="20210527 17:04:54.735"/>
+<msg timestamp="20210630 11:24:01.860" level="INFO">${menuButton} = xpath://button[contains(., 'VESSELS')]</msg>
+<status status="PASS" starttime="20210630 11:24:01.859" endtime="20210630 11:24:01.860"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${menuButton}</arg>
 <arg>10s</arg>
 <arg>${menuButtonName} is not visibale after 10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210527 17:04:54.735" endtime="20210527 17:04:54.757"/>
+<status status="PASS" starttime="20210630 11:24:01.860" endtime="20210630 11:24:01.882"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${menuButton}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:54.758" level="INFO">Clicking button 'xpath://button[contains(., 'VESSELS')]'.</msg>
-<status status="PASS" starttime="20210527 17:04:54.757" endtime="20210527 17:04:54.899"/>
+<msg timestamp="20210630 11:24:01.883" level="INFO">Clicking button 'xpath://button[contains(., 'VESSELS')]'.</msg>
+<status status="PASS" starttime="20210630 11:24:01.882" endtime="20210630 11:24:02.033"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:54.734" endtime="20210527 17:04:54.899"/>
+<status status="PASS" starttime="20210630 11:24:01.858" endtime="20210630 11:24:02.034"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:54.733" endtime="20210527 17:04:54.899"/>
+<status status="PASS" starttime="20210630 11:24:01.857" endtime="20210630 11:24:02.034"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:54.065" endtime="20210527 17:04:54.899"/>
+<status status="PASS" starttime="20210630 11:24:01.397" endtime="20210630 11:24:02.034"/>
 </kw>
-<kw name="Select first Item to edit" library="CommonUserDefineKeywords">
+<status status="PASS" starttime="20210630 11:24:00.102" endtime="20210630 11:24:02.034"/>
+</kw>
+<kw name="And Exist an email that is used for item no #2 on the list" library="VesselUserDefineKeywords" sourcename="Exist an email that is used for item no #${orderOfEmail} on the list">
+<doc>get the text of email field on first item</doc>
+<kw name="Set Variable" library="BuiltIn">
+<var>${emailLocator}</var>
+<arg>xpath://tbody/tr[${orderOfEmail}]/td[5]/div[2]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210630 11:24:02.036" level="INFO">${emailLocator} = xpath://tbody/tr[2]/td[5]/div[2]</msg>
+<status status="PASS" starttime="20210630 11:24:02.036" endtime="20210630 11:24:02.036"/>
+</kw>
+<kw name="Get value of a fieldName" library="GetTasks">
+<arg>${emailLocator}</arg>
+<doc>get data value of a field name</doc>
+<kw name="Retry to verify element 3 times" library="WaitKeywords">
+<arg>${fieldLocator}</arg>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${GLOBAL_RETRY_AMOUNT}</arg>
+<arg>${GLOBAL_RETRY_INTERVAL}</arg>
+<arg>Wait for element visible</arg>
+<arg>${fieldLocation}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait for element visible" library="WaitKeywords">
+<arg>${fieldLocation}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${fieldLocation}</arg>
+<arg>10s</arg>
+<arg>Could not found this field Location after 3 times of retry</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210630 11:24:02.040" endtime="20210630 11:24:02.574"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:02.039" endtime="20210630 11:24:02.574"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:02.039" endtime="20210630 11:24:02.574"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:02.037" endtime="20210630 11:24:02.574"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${fieldValue}</var>
+<arg>${fieldLocator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210630 11:24:02.600" level="INFO">${fieldValue} = test@es-sea.com</msg>
+<status status="PASS" starttime="20210630 11:24:02.575" endtime="20210630 11:24:02.600"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${fieldValue}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210630 11:24:02.601" level="INFO">${fieldValue} = test@es-sea.com</msg>
+<status status="PASS" starttime="20210630 11:24:02.600" endtime="20210630 11:24:02.601"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:02.037" endtime="20210630 11:24:02.601"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:02.035" endtime="20210630 11:24:02.601"/>
+</kw>
+<kw name="And Select first Item to edit" library="CommonUserDefineKeywords">
 <kw name="Retry to verify element 3 times" library="WaitKeywords">
 <arg>${firstNameInList}</arg>
 <kw name="Wait Until Keyword Succeeds" library="BuiltIn">
@@ -223,115 +278,328 @@
 <arg>10s</arg>
 <arg>Could not found this field Location after 3 times of retry</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210527 17:04:54.901" endtime="20210527 17:04:55.592"/>
+<status status="PASS" starttime="20210630 11:24:02.603" endtime="20210630 11:24:02.626"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:54.901" endtime="20210527 17:04:55.592"/>
+<status status="PASS" starttime="20210630 11:24:02.603" endtime="20210630 11:24:02.626"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:54.900" endtime="20210527 17:04:55.592"/>
+<status status="PASS" starttime="20210630 11:24:02.602" endtime="20210630 11:24:02.627"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:54.900" endtime="20210527 17:04:55.592"/>
+<status status="PASS" starttime="20210630 11:24:02.602" endtime="20210630 11:24:02.627"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${firstNameInList}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:55.593" level="INFO">Clicking element 'xpath://tbody[contains(.,'Name')]/child::tr[1]/child::td[2]/div[2]'.</msg>
-<status status="PASS" starttime="20210527 17:04:55.593" endtime="20210527 17:04:55.688"/>
+<msg timestamp="20210630 11:24:02.627" level="INFO">Clicking element 'xpath://tbody[contains(.,'Name')]/child::tr[1]/child::td[2]/div[2]'.</msg>
+<status status="PASS" starttime="20210630 11:24:02.627" endtime="20210630 11:24:02.704"/>
 </kw>
 <kw name="User click Edit button" library="CommonFunctions" sourcename="User click ${buttonName} button">
 <kw name="Set Variable" library="BuiltIn">
 <var>${buttonLocation}</var>
 <arg>xpath://button[contains(.,'${buttonName}')]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210527 17:04:55.690" level="INFO">${buttonLocation} = xpath://button[contains(.,'Edit')]</msg>
-<status status="PASS" starttime="20210527 17:04:55.689" endtime="20210527 17:04:55.690"/>
+<msg timestamp="20210630 11:24:02.707" level="INFO">${buttonLocation} = xpath://button[contains(.,'Edit')]</msg>
+<status status="PASS" starttime="20210630 11:24:02.707" endtime="20210630 11:24:02.707"/>
 </kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${passed}</var>
-<arg>wait until element is visible</arg>
+<kw name="Wait for element visible" library="WaitKeywords">
 <arg>${buttonLocation}</arg>
-<arg>40s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${buttonLocation}</arg>
-<arg>40s</arg>
+<arg>${fieldLocation}</arg>
+<arg>10s</arg>
+<arg>Could not found this field Location after 3 times of retry</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210527 17:04:55.690" endtime="20210527 17:04:56.596"/>
+<status status="PASS" starttime="20210630 11:24:02.708" endtime="20210630 11:24:03.378"/>
 </kw>
-<msg timestamp="20210527 17:04:56.596" level="INFO">${passed} = True</msg>
-<status status="PASS" starttime="20210527 17:04:55.690" endtime="20210527 17:04:56.596"/>
+<status status="PASS" starttime="20210630 11:24:02.708" endtime="20210630 11:24:03.379"/>
 </kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${passed}</arg>
-<arg>click button</arg>
-<arg>${buttonLocation}</arg>
-<arg>ELSE</arg>
-<arg>wait until keyword succeeds</arg>
-<arg>50s</arg>
-<arg>5s</arg>
-<arg>click button</arg>
-<arg>${buttonLocation}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${buttonLocation}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:56.597" level="INFO">Clicking button 'xpath://button[contains(.,'Edit')]'.</msg>
-<status status="PASS" starttime="20210527 17:04:56.597" endtime="20210527 17:04:56.692"/>
-</kw>
-<status status="PASS" starttime="20210527 17:04:56.596" endtime="20210527 17:04:56.692"/>
+<msg timestamp="20210630 11:24:03.380" level="INFO">Clicking button 'xpath://button[contains(.,'Edit')]'.</msg>
+<status status="PASS" starttime="20210630 11:24:03.379" endtime="20210630 11:24:03.473"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210527 17:04:59.699" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20210527 17:04:56.692" endtime="20210527 17:04:59.699"/>
+<msg timestamp="20210630 11:24:05.480" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210630 11:24:03.473" endtime="20210630 11:24:05.480"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:55.688" endtime="20210527 17:04:59.699"/>
+<status status="PASS" starttime="20210630 11:24:02.705" endtime="20210630 11:24:05.481"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:54.900" endtime="20210527 17:04:59.699"/>
+<status status="PASS" starttime="20210630 11:24:02.601" endtime="20210630 11:24:05.481"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:52.479" endtime="20210527 17:04:59.700"/>
-</kw>
-<kw name="And First Vessel has Email on Vessel list" library="PreConditionOfVessel">
-<kw name="Get the text of Email" library="GetTasks" sourcename="Get the text of ${fieldName}">
-<doc>get text of field name of first row in a form</doc>
-<kw name="Set Variable" library="BuiltIn">
-<var>${fieldLocation}</var>
-<arg>xpath://p[contains(text(), '${fieldName}')]/following::p[1]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210527 17:04:59.701" level="INFO">${fieldLocation} = xpath://p[contains(text(), 'Email')]/following::p[1]</msg>
-<status status="PASS" starttime="20210527 17:04:59.701" endtime="20210527 17:04:59.701"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${fieldValue}</var>
-<arg>${fieldLocation}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:59.731" level="INFO">${fieldValue} = test@eaglestar.com.my</msg>
-<status status="PASS" starttime="20210527 17:04:59.701" endtime="20210527 17:04:59.732"/>
-</kw>
-<kw name="Set Suite Variable" library="BuiltIn">
+<kw name="When User edit with existed email on the list" library="EditVesselDefineKeywords">
 <arg>${fieldValue}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20210527 17:04:59.732" level="INFO">${fieldValue} = test@eaglestar.com.my</msg>
-<status status="PASS" starttime="20210527 17:04:59.732" endtime="20210527 17:04:59.732"/>
+<kw name="Clear email value" library="EditVesselForm">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${emailInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210630 11:24:05.482" endtime="20210630 11:24:05.506"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:59.700" endtime="20210527 17:04:59.732"/>
+<kw name="Clear Text Field" library="CommonFunctions">
+<arg>${emailInput}</arg>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${value}</var>
+<arg>${fieldLocator}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20210630 11:24:05.524" level="INFO">${value} = test@es-sea.com</msg>
+<status status="PASS" starttime="20210630 11:24:05.507" endtime="20210630 11:24:05.524"/>
 </kw>
-<status status="PASS" starttime="20210527 17:04:59.700" endtime="20210527 17:04:59.733"/>
+<kw name="Get Length" library="BuiltIn">
+<var>${backspaces count}</var>
+<arg>${value}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210630 11:24:05.525" level="INFO">Length is 15</msg>
+<msg timestamp="20210630 11:24:05.525" level="INFO">${backspaces count} = 15</msg>
+<status status="PASS" starttime="20210630 11:24:05.524" endtime="20210630 11:24:05.525"/>
 </kw>
-<kw name="And">
-<msg timestamp="20210527 17:04:59.738" level="FAIL">No keyword with name 'And' found.</msg>
-<status status="FAIL" starttime="20210527 17:04:59.738" endtime="20210527 17:04:59.738"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"""${value}""" != ''</arg>
+<arg>Repeat Keyword</arg>
+<arg>${backspaces count +1}</arg>
+<arg>Press Keys</arg>
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Repeat Keyword" library="BuiltIn">
+<arg>${backspaces count +1}</arg>
+<arg>Press Keys</arg>
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<msg timestamp="20210630 11:24:05.527" level="INFO">Repeating keyword, round 1/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:05.527" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:05.816" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:05.816" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:05.527" endtime="20210630 11:24:05.854"/>
 </kw>
-<kw name="Then Compare Email of Vessel with one on Edit form" library="VesselUserDefineKeywords" sourcename="Compare ${fieldName} of Vessel with one on Edit form">
-<status status="NOT RUN" starttime="20210527 17:04:59.739" endtime="20210527 17:04:59.739"/>
+<msg timestamp="20210630 11:24:05.854" level="INFO">Repeating keyword, round 2/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:05.854" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:06.143" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:06.143" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:05.854" endtime="20210630 11:24:06.155"/>
 </kw>
-<kw name="And Compare Transformation Start Date of Vessel with one on Edit form" library="VesselUserDefineKeywords" sourcename="Compare ${fieldName} of Vessel with one on Edit form">
-<status status="NOT RUN" starttime="20210527 17:04:59.739" endtime="20210527 17:04:59.739"/>
+<msg timestamp="20210630 11:24:06.156" level="INFO">Repeating keyword, round 3/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:06.156" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:06.435" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:06.435" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:06.156" endtime="20210630 11:24:06.453"/>
 </kw>
-<status status="FAIL" starttime="20210527 17:04:52.479" endtime="20210527 17:04:59.739"/>
+<msg timestamp="20210630 11:24:06.453" level="INFO">Repeating keyword, round 4/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:06.453" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:06.731" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:06.731" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:06.453" endtime="20210630 11:24:06.741"/>
 </kw>
-<msg timestamp="20210527 17:04:59.739" level="INFO">${testCaseStatus} = False</msg>
-<status status="PASS" starttime="20210527 17:04:52.478" endtime="20210527 17:04:59.739"/>
+<msg timestamp="20210630 11:24:06.741" level="INFO">Repeating keyword, round 5/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:06.742" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:07.025" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:07.025" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:06.742" endtime="20210630 11:24:07.036"/>
+</kw>
+<msg timestamp="20210630 11:24:07.036" level="INFO">Repeating keyword, round 6/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:07.037" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:07.318" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:07.318" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:07.036" endtime="20210630 11:24:07.329"/>
+</kw>
+<msg timestamp="20210630 11:24:07.329" level="INFO">Repeating keyword, round 7/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:07.330" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:07.630" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:07.630" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:07.330" endtime="20210630 11:24:07.640"/>
+</kw>
+<msg timestamp="20210630 11:24:07.640" level="INFO">Repeating keyword, round 8/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:07.641" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:07.924" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:07.924" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:07.641" endtime="20210630 11:24:07.935"/>
+</kw>
+<msg timestamp="20210630 11:24:07.935" level="INFO">Repeating keyword, round 9/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:07.935" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:08.219" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:08.219" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:07.935" endtime="20210630 11:24:08.230"/>
+</kw>
+<msg timestamp="20210630 11:24:08.230" level="INFO">Repeating keyword, round 10/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:08.231" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:08.513" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:08.513" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:08.230" endtime="20210630 11:24:08.524"/>
+</kw>
+<msg timestamp="20210630 11:24:08.524" level="INFO">Repeating keyword, round 11/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:08.525" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:08.807" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:08.807" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:08.524" endtime="20210630 11:24:08.818"/>
+</kw>
+<msg timestamp="20210630 11:24:08.818" level="INFO">Repeating keyword, round 12/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:08.819" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:09.100" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:09.101" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:08.819" endtime="20210630 11:24:09.112"/>
+</kw>
+<msg timestamp="20210630 11:24:09.113" level="INFO">Repeating keyword, round 13/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:09.114" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:09.411" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:09.411" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:09.113" endtime="20210630 11:24:09.422"/>
+</kw>
+<msg timestamp="20210630 11:24:09.422" level="INFO">Repeating keyword, round 14/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:09.423" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:09.707" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:09.707" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:09.422" endtime="20210630 11:24:09.718"/>
+</kw>
+<msg timestamp="20210630 11:24:09.718" level="INFO">Repeating keyword, round 15/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:09.719" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:10.000" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:10.000" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:09.718" endtime="20210630 11:24:10.019"/>
+</kw>
+<msg timestamp="20210630 11:24:10.019" level="INFO">Repeating keyword, round 16/16.</msg>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${fieldLocator}</arg>
+<arg>BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210630 11:24:10.019" level="INFO">Sending key(s) ('BACKSPACE',) to xpath://input[@id='vesselDefaultEmail'] element.</msg>
+<msg timestamp="20210630 11:24:10.298" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg timestamp="20210630 11:24:10.298" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20210630 11:24:10.019" endtime="20210630 11:24:10.307"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:05.525" endtime="20210630 11:24:10.307"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:05.525" endtime="20210630 11:24:10.307"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:05.506" endtime="20210630 11:24:10.307"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:05.482" endtime="20210630 11:24:10.307"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${emailInput}</arg>
+<arg>${inputData}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210630 11:24:10.308" level="INFO">Typing text 'test@es-sea.com' into text field 'xpath://input[@id='vesselDefaultEmail']'.</msg>
+<status status="PASS" starttime="20210630 11:24:10.307" endtime="20210630 11:24:10.447"/>
+</kw>
+<kw name="Mouse Out" library="SeleniumLibrary">
+<arg>${emailInput}</arg>
+<doc>Simulates moving the mouse away from the element ``locator``.</doc>
+<msg timestamp="20210630 11:24:10.447" level="INFO">Simulating Mouse Out on element 'xpath://input[@id='vesselDefaultEmail']'.</msg>
+<status status="PASS" starttime="20210630 11:24:10.447" endtime="20210630 11:24:11.011"/>
+</kw>
+<kw name="User click Submit button" library="CommonFunctions" sourcename="User click ${buttonName} button">
+<kw name="Set Variable" library="BuiltIn">
+<var>${buttonLocation}</var>
+<arg>xpath://button[contains(.,'${buttonName}')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210630 11:24:11.012" level="INFO">${buttonLocation} = xpath://button[contains(.,'Submit')]</msg>
+<status status="PASS" starttime="20210630 11:24:11.012" endtime="20210630 11:24:11.012"/>
+</kw>
+<kw name="Wait for element visible" library="WaitKeywords">
+<arg>${buttonLocation}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${fieldLocation}</arg>
+<arg>10s</arg>
+<arg>Could not found this field Location after 3 times of retry</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210630 11:24:11.013" endtime="20210630 11:24:11.039"/>
+</kw>
+<status status="PASS" starttime="20210630 11:24:11.012" endtime="20210630 11:24:11.039"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${buttonLocation}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210630 11:24:11.040" level="INFO">Clicking button 'xpath://button[contains(.,'Submit')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210630 11:24:12.316" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210630 11:24:12.155" endtime="20210630 11:24:12.316"/>
+</kw>
+<msg timestamp="20210630 11:24:12.322" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-contained jss486 MuiButton-containedSecondary Mui-disabled Mui-disabled" tabindex="-1" type="button" disabled=""&gt;...&lt;/button&gt; is not clickable at point (941, 484). Other element would receive the click: &lt;div class="MuiDialogActions-root MuiDialogActions-spacing"&gt;...&lt;/div&gt;
+  (Session info: chrome=91.0.4472.114)
+</msg>
+<status status="FAIL" starttime="20210630 11:24:11.039" endtime="20210630 11:24:12.322"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210630 11:24:12.322" endtime="20210630 11:24:12.323"/>
+</kw>
+<status status="FAIL" starttime="20210630 11:24:11.011" endtime="20210630 11:24:12.323"/>
+</kw>
+<kw name="User click Confirm button" library="CommonFunctions" sourcename="User click ${buttonName} button">
+<status status="NOT RUN" starttime="20210630 11:24:12.323" endtime="20210630 11:24:12.323"/>
+</kw>
+<status status="FAIL" starttime="20210630 11:24:05.481" endtime="20210630 11:24:12.323"/>
+</kw>
+<kw name="Then Email is updated successfully" library="EditVesselDefineKeywords">
+<status status="NOT RUN" starttime="20210630 11:24:12.323" endtime="20210630 11:24:12.323"/>
+</kw>
+<status status="FAIL" starttime="20210630 11:24:00.101" endtime="20210630 11:24:12.324"/>
+</kw>
+<msg timestamp="20210630 11:24:12.324" level="INFO">${testCaseStatus} = False</msg>
+<status status="PASS" starttime="20210630 11:24:00.100" endtime="20210630 11:24:12.324"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>'${testCaseStatus}'=='False'</arg>
@@ -341,30 +609,31 @@
 <kw name="Run Keyword" library="BuiltIn">
 <arg>${testCaseName}</arg>
 <doc>Executes the given keyword with the given arguments.</doc>
-<kw name="Verify Edit Vessel form" library="EditVesselTestCase">
-<tag>UI</tag>
-<tag>Validation</tag>
-<kw name="Given User go to Vessel tab then open Edit form" library="VesselUserDefineKeywords">
+<kw name="Update with existed email on the Vessel list" library="EditVesselTestCase">
+<tag>Function</tag>
+<tag>NegativeCase</tag>
+<doc>use existed email on the Vessel list to update</doc>
+<kw name="Given User go to Vessel page" library="VesselUserDefineKeywords">
 <kw name="User go to Ship Owner page" library="ShipOwnersUserDefineKeywords">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${shipOwnersMenu}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210527 17:04:59.741" endtime="20210527 17:04:59.766"/>
+<status status="PASS" starttime="20210630 11:24:12.327" endtime="20210630 11:24:12.347"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${shipOwnersMenu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210527 17:04:59.767" level="INFO">Clicking element 'xpath://div[@role='button' and contains(.,'Ship Owners')]'.</msg>
+<msg timestamp="20210630 11:24:12.348" level="INFO">Clicking element 'xpath://div[@role='button' and contains(.,'Ship Owners')]'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210527 17:05:01.321" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210527 17:05:00.872" endtime="20210527 17:05:01.322"/>
+<msg timestamp="20210630 11:24:13.593" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210630 11:24:13.428" endtime="20210630 11:24:13.593"/>
 </kw>
-<msg timestamp="20210527 17:05:01.332" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;div class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false"&gt;...&lt;/div&gt; is not clickable at point (119, 97). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper" role="none presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
-  (Session info: chrome=90.0.4430.212)
+<msg timestamp="20210630 11:24:13.594" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;div class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false"&gt;...&lt;/div&gt; is not clickable at point (119, 97). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper" role="none presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
+  (Session info: chrome=91.0.4472.114)
 </msg>
-<status status="FAIL" starttime="20210527 17:04:59.766" endtime="20210527 17:05:01.332"/>
+<status status="FAIL" starttime="20210630 11:24:12.347" endtime="20210630 11:24:13.594"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${passed}</var>
@@ -372,88 +641,80 @@
 <arg>${itemInTable}</arg>
 <arg>10s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="NOT RUN" starttime="20210527 17:05:01.332" endtime="20210527 17:05:01.332"/>
+<status status="NOT RUN" starttime="20210630 11:24:13.594" endtime="20210630 11:24:13.594"/>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <arg>${passed}</arg>
 <arg>fail</arg>
 <arg>The list of ship owners could not shown after 10s waiting</arg>
 <doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
-<status status="NOT RUN" starttime="20210527 17:05:01.333" endtime="20210527 17:05:01.333"/>
+<status status="NOT RUN" starttime="20210630 11:24:13.595" endtime="20210630 11:24:13.595"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${totalItem}</var>
 <arg>${itemInTable}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20210527 17:05:01.333" endtime="20210527 17:05:01.333"/>
+<status status="NOT RUN" starttime="20210630 11:24:13.595" endtime="20210630 11:24:13.595"/>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <arg>'${totalItem}'== '0-0 of 0'</arg>
 <arg>click element</arg>
 <arg>${firstItemOfTable}</arg>
 <doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
-<status status="NOT RUN" starttime="20210527 17:05:01.333" endtime="20210527 17:05:01.333"/>
+<status status="NOT RUN" starttime="20210630 11:24:13.595" endtime="20210630 11:24:13.595"/>
 </kw>
-<status status="FAIL" starttime="20210527 17:04:59.741" endtime="20210527 17:05:01.334"/>
+<status status="FAIL" starttime="20210630 11:24:12.327" endtime="20210630 11:24:13.595"/>
 </kw>
 <kw name="User clicks on the menu &quot;VESSELS&quot;" library="ShipOwnersUserDefineKeywords" sourcename="User clicks on the menu &quot;${menuTabName}&quot;">
-<status status="NOT RUN" starttime="20210527 17:05:01.334" endtime="20210527 17:05:01.334"/>
+<status status="NOT RUN" starttime="20210630 11:24:13.595" endtime="20210630 11:24:13.596"/>
 </kw>
-<kw name="Select first Item to edit" library="CommonUserDefineKeywords">
-<status status="NOT RUN" starttime="20210527 17:05:01.334" endtime="20210527 17:05:01.334"/>
+<status status="FAIL" starttime="20210630 11:24:12.326" endtime="20210630 11:24:13.596"/>
 </kw>
-<status status="FAIL" starttime="20210527 17:04:59.740" endtime="20210527 17:05:01.334"/>
+<kw name="And Exist an email that is used for item no #2 on the list" library="VesselUserDefineKeywords" sourcename="Exist an email that is used for item no #${orderOfEmail} on the list">
+<doc>get the text of email field on first item</doc>
+<status status="NOT RUN" starttime="20210630 11:24:13.597" endtime="20210630 11:24:13.597"/>
 </kw>
-<kw name="And First Vessel has Email on Vessel list" library="PreConditionOfVessel">
-<status status="NOT RUN" starttime="20210527 17:05:01.335" endtime="20210527 17:05:01.335"/>
+<kw name="And Select first Item to edit" library="CommonUserDefineKeywords">
+<status status="NOT RUN" starttime="20210630 11:24:13.598" endtime="20210630 11:24:13.598"/>
 </kw>
-<kw name="And">
-<status status="NOT RUN" starttime="20210527 17:05:01.340" endtime="20210527 17:05:01.340"/>
+<kw name="When User edit with existed email on the list" library="EditVesselDefineKeywords">
+<arg>${fieldValue}</arg>
+<status status="NOT RUN" starttime="20210630 11:24:13.599" endtime="20210630 11:24:13.599"/>
 </kw>
-<kw name="Then Compare Email of Vessel with one on Edit form" library="VesselUserDefineKeywords" sourcename="Compare ${fieldName} of Vessel with one on Edit form">
-<status status="NOT RUN" starttime="20210527 17:05:01.341" endtime="20210527 17:05:01.341"/>
+<kw name="Then Email is updated successfully" library="EditVesselDefineKeywords">
+<status status="NOT RUN" starttime="20210630 11:24:13.600" endtime="20210630 11:24:13.600"/>
 </kw>
-<kw name="And Compare Transformation Start Date of Vessel with one on Edit form" library="VesselUserDefineKeywords" sourcename="Compare ${fieldName} of Vessel with one on Edit form">
-<status status="NOT RUN" starttime="20210527 17:05:01.342" endtime="20210527 17:05:01.342"/>
+<status status="FAIL" starttime="20210630 11:24:12.326" endtime="20210630 11:24:13.600"/>
 </kw>
-<status status="FAIL" starttime="20210527 17:04:59.740" endtime="20210527 17:05:01.342"/>
+<status status="FAIL" starttime="20210630 11:24:12.325" endtime="20210630 11:24:13.600"/>
 </kw>
-<status status="FAIL" starttime="20210527 17:04:59.740" endtime="20210527 17:05:01.342"/>
+<status status="FAIL" starttime="20210630 11:24:12.325" endtime="20210630 11:24:13.600"/>
 </kw>
-<status status="FAIL" starttime="20210527 17:04:59.739" endtime="20210527 17:05:01.342"/>
+<status status="FAIL" starttime="20210630 11:24:00.100" endtime="20210630 11:24:13.601"/>
 </kw>
-<status status="FAIL" starttime="20210527 17:04:52.478" endtime="20210527 17:05:01.342"/>
-</kw>
-<kw name="End TestCase" library="CommonFunctions" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210527 17:05:01.343" endtime="20210527 17:05:03.536"/>
-</kw>
-<status status="PASS" starttime="20210527 17:05:01.343" endtime="20210527 17:05:03.536"/>
-</kw>
-<tag>UI</tag>
-<tag>Validation</tag>
-<status status="FAIL" starttime="20210527 17:04:42.531" endtime="20210527 17:05:03.538">ElementClickInterceptedException: Message: element click intercepted: Element &lt;div class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false"&gt;...&lt;/div&gt; is not clickable at point (119, 97). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper" role="none presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
-  (Session info: chrome=90.0.4430.212)
+<tag>Function</tag>
+<tag>NegativeCase</tag>
+<status status="FAIL" starttime="20210630 11:23:52.987" endtime="20210630 11:24:13.602">ElementClickInterceptedException: Message: element click intercepted: Element &lt;div class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false"&gt;...&lt;/div&gt; is not clickable at point (119, 97). Other element would receive the click: &lt;div class="MuiDialog-container MuiDialog-scrollPaper" role="none presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"&gt;...&lt;/div&gt;
+  (Session info: chrome=91.0.4472.114)
 </status>
 </test>
-<status status="FAIL" starttime="20210527 17:04:42.164" endtime="20210527 17:05:03.543"/>
+<status status="FAIL" starttime="20210630 11:23:52.614" endtime="20210630 11:24:13.605"/>
 </suite>
-<status status="FAIL" starttime="20210527 17:04:42.161" endtime="20210527 17:05:03.548"/>
+<status status="FAIL" starttime="20210630 11:23:52.611" endtime="20210630 11:24:13.609"/>
 </suite>
-<status status="FAIL" starttime="20210527 17:04:42.158" endtime="20210527 17:05:03.550"/>
+<status status="FAIL" starttime="20210630 11:23:52.608" endtime="20210630 11:24:13.612"/>
 </suite>
-<status status="FAIL" starttime="20210527 17:04:42.154" endtime="20210527 17:05:03.552"/>
+<status status="FAIL" starttime="20210630 11:23:52.606" endtime="20210630 11:24:13.616"/>
 </suite>
-<status status="FAIL" starttime="20210527 17:04:42.120" endtime="20210527 17:05:03.554"/>
+<status status="FAIL" starttime="20210630 11:23:52.571" endtime="20210630 11:24:13.618"/>
 </suite>
 <statistics>
 <total>
 <stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">UI</stat>
-<stat pass="0" fail="1" skip="0">Validation</stat>
+<stat pass="0" fail="1" skip="0">Function</stat>
+<stat pass="0" fail="1" skip="0">NegativeCase</stat>
 </tag>
 <suite>
 <stat pass="0" fail="1" skip="0" id="s1" name="Auto-AdminPortal">Auto-AdminPortal</stat>
@@ -464,10 +725,5 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210527 17:04:42.502" level="ERROR">Error in file 'C:\Users\User\Documents\GitHub\Auto-AdminPortal\Resource\CommonFiles\InputTasks.robot' on line 7: Resource file 'GetKeywords.robot' does not exist.</msg>
-<msg timestamp="20210527 17:04:42.519" level="ERROR">Error in file 'C:\Users\User\Documents\GitHub\Auto-AdminPortal\Resource\PreCondition\PreConditionOfVessel.robot' on line 3: Resource file '..\..\..\Resource\UserDefineKeywords\ShipOwnersUserDefineKeywords.robot' does not exist.</msg>
-<msg timestamp="20210527 17:04:42.521" level="ERROR">Error in file 'C:\Users\User\Documents\GitHub\Auto-AdminPortal\Resource\PreCondition\PreConditionOfVessel.robot' on line 4: Resource file '..\..\..\Resource\CommonFiles\CommonFunctions.robot' does not exist.</msg>
-<msg timestamp="20210527 17:04:42.523" level="ERROR">Error in file 'C:\Users\User\Documents\GitHub\Auto-AdminPortal\Resource\PreCondition\PreConditionOfVessel.robot' on line 5: Resource file '..\..\..\Resource\UserDefineKeywords\CommonUserDefineKeywords.robot' does not exist.</msg>
-<msg timestamp="20210527 17:04:42.525" level="ERROR">Error in file 'C:\Users\User\Documents\GitHub\Auto-AdminPortal\Resource\PreCondition\PreConditionOfVessel.robot' on line 6: Resource file '..\..\..\Resource\UserDefineKeywords\VesselUserDefineKeywords.robot' does not exist.</msg>
 </errors>
 </robot>

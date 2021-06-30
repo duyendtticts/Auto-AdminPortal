@@ -9,7 +9,6 @@ Test Teardown      CommonFunctions.End TestCase
 
 *** Variables ***
 
-
 *** Test Cases ***
 Verify the Add new Vessel form
     [Documentation]    This test case verify the create vessel form

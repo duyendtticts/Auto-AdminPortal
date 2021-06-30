@@ -7,7 +7,7 @@ Resource    ../CommonFiles/InputTasks.robot
 Variables    ../WebElements/vesselElements.py
 
 *** Variables ***
-&{validDomain}=    domain1=es-sea.com  domain2=eaglestar.com.my    domain3=sparescnx.com
+@{validDomain}=    domain1=es-sea.com  domain2=eaglestar.com.my    domain3=sparescnx.com
 ${invalidDomain}=   google.com
 
 *** Keywords ***
@@ -50,10 +50,14 @@ User input into ${emailField} field with ${typeOfEmail} email
     Input email value       ${inputField}       ${typeOfEmail}
 
 Edit email value with email value
-    [Documentation]    use for email input field in add new vessel form
+    [Documentation]    use for email input field with cases: validEmail, invalidDomainEmail, invalidFormatEmail
     [Arguments]    ${inputData}
-    ${typeOfEmail}=     set variable    ${inputData}
-    Input email value       ${emailInput}      ${typeOfEmail}
+    ${typeOfEmail}=             set variable    ${inputData}
+    run keyword if    '${typeOfEmail}'=='validEmail'              Input email value       ${emailInput}      validEmail
+    ...    ELSE IF    '${typeOfEmail}'=='invalidDomainEmail'      Input email value       ${emailInput}      invalidDomainEmail
+    ...    ELSE IF    '${typeOfEmail}'=='invalidFormatEmail'      Input email value       ${emailInput}      invalidFormatEmail
+    ...    ELSE IF    '${typeOfEmail}'=='lackOfDomain'            Input email value       ${emailInput}      lackOfDomain
+    ...    ELSE       fail    Could not process this case
 
 # Verify cases
 User will see the error message for ${fieldName} field should be "${errorMessage}"

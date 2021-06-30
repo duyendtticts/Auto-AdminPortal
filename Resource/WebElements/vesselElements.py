@@ -9,4 +9,7 @@ emailValue = "xpath://p[contains(text(), 'Email')]/following::p[1]"
 firstEmailInList = "xpath://tbody/tr[1]/td[5]/div[2]"  #//td[contains(., 'Email') and @xpath='1']/div[2]
 
 #edit form
+headerText = "xpath://h6[text()='Update Vessel']"
 emailInput = "xpath://input[@id='vesselDefaultEmail']"
+emailErrorMessage = "xpath://input[@id='vesselDefaultEmail']/following::p[1]"
+successPopup= "xpath://*[@class='MuiAlert-message']"

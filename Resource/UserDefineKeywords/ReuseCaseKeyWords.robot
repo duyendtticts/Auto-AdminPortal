@@ -23,3 +23,6 @@ Add new Vessel successfully with Transformation Date as current date
     And User click Confirm button
     Then User will see the successfully popup as: "Successfully created the vessel."
 
+Clear data to reuse later
+    User go to Vessel tab then open Edit form
+
