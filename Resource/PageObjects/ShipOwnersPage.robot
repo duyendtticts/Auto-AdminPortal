@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 Library    DateTime
 Variables    ../WebElements/shipOwnersElements.py
+Variables    ../WebElements/vesselElements.py
 
 *** Variables ***
 
@@ -32,6 +33,8 @@ Click next button in calendar
 Select current date in calendar
     [Arguments]    ${currentDate}
     Click button    xpath://span[text()='${currentDate}']/ancestor::button
+    ${transformationValue}=     Get Text        ${transformationStartDateValue}
+    set suite variable    ${currentDate}
 
 Select future date in calendar
     [Arguments]    ${currentDate}
@@ -42,6 +45,7 @@ Select previous date in calendar
     [Arguments]    ${currentDate}
     ${pastDate}=    evaluate    ${currentDate}-1
     click button    xpath://span[text()='${pastDate}']/ancestor::button
+
 
 Select date in previous month
     Click previous button in calendar
@@ -78,6 +82,7 @@ Select date based on last date in the month
     ...    ELSE IF    '${periodTime}'=='current'         Select current date in calendar    ${currentDate}
     ...    ELSE IF    '${periodTime}'=='future'          Select date in next month
     ...    ELSE        fail     Date is not invalid value. Should select past, current or future date only
+
 
 
 

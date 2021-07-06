@@ -42,8 +42,9 @@ Clear Text Field
 User click ${buttonName} button
     ${buttonLocation}=  Set Variable       xpath://button[contains(.,'${buttonName}')]
     Wait for element visible            ${buttonLocation}
-    click button        ${buttonLocation}
-    sleep    2s
+#    click button        ${buttonLocation}
+    wait until keyword succeeds    30s  10s    click button     ${buttonLocation}
+#    wait until element is not visible    ${buttonLocation}     10s      ${buttonName} button is still on screen
 
 #Assert element
 Title of ${formName} should be "${titleLabel}"
@@ -63,6 +64,7 @@ Set last date of month
     ${evenMonthList}=   create list    4    6   9   11
     ${oddMonth}=        run keyword and return status    List should contain value       ${oddMonthList}         ${currentMonth}
     ${evenMonth}=       run keyword and return status    List should contain value       ${evenMonthList}        ${currentMonth}
+
 
 
 

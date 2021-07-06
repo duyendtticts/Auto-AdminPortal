@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 Library    String
 Resource    ../CommonFiles/CommonFunctions.robot
 Resource    ../CommonFiles/GetTasks.robot
+Resource    ../CommonFiles/SetVariableKeywords.robot
 Resource    ../CommonFiles/InputTasks.robot
 Variables    ../WebElements/vesselElements.py
 
@@ -36,28 +37,33 @@ User input into ${fieldName} text field with value as "${inputValue}"
     ${inputData}=   set variable    Auto ${inputValue} ${autoString}
     input text      ${inputField}       ${inputData}
     mouse out       ${inputField}
+    [Return]        ${inputData}
 
 User input into ${fieldName} field (only number) with value contains ${no} integers
     [Documentation]    use for field only accept number
     ${inputField}=  set variable    xpath://label[contains(text(), '${fieldName}')]/following-sibling::div/input
-    ${autoNumber}=      generate random string     ${no}    [NUMBERS]
+    ${autoNumber}=  generate random string     ${no}    [NUMBERS]
     input text      ${inputField}       ${autoNumber}
     mouse out       ${inputField}
+    ${imoNo}=       set variable    ${autoNumber}
+    set suite variable              ${imoNo}
+    [Return]        ${imoNo}
 
-User input into ${emailField} field with ${typeOfEmail} email
+User input into ${emailField} field with valid email
     [Documentation]    use for email input field in add new vessel form
     ${inputField}=      set variable    xpath://label[contains(text(), '${emailField}')]/following-sibling::div/input
-    Input email value       ${inputField}       ${typeOfEmail}
+    Set Valid Email Value       #return ${validEmail}
+    Input Text       ${inputField}       ${validEmail}
 
-Edit email value with email value
+Edit email value with invalid value
     [Documentation]    use for email input field with cases: validEmail, invalidDomainEmail, invalidFormatEmail
     [Arguments]    ${inputData}
     ${typeOfEmail}=             set variable    ${inputData}
-    run keyword if    '${typeOfEmail}'=='validEmail'              Input email value       ${emailInput}      validEmail
-    ...    ELSE IF    '${typeOfEmail}'=='invalidDomainEmail'      Input email value       ${emailInput}      invalidDomainEmail
-    ...    ELSE IF    '${typeOfEmail}'=='invalidFormatEmail'      Input email value       ${emailInput}      invalidFormatEmail
-    ...    ELSE IF    '${typeOfEmail}'=='lackOfDomain'            Input email value       ${emailInput}      lackOfDomain
-    ...    ELSE       fail    Could not process this case
+    run keyword if    '${typeOfEmail}'=='invalidDomainEmail'      Input invalid email value       ${emailInput}      invalidDomainEmail
+    ...    ELSE IF    '${typeOfEmail}'=='invalidFormatEmail'      Input invalid email value       ${emailInput}      invalidFormatEmail
+    ...    ELSE IF    '${typeOfEmail}'=='lackOfDomain'            Input invalid email value       ${emailInput}      lackOfDomain
+    ...    ELSE       fail    Could not process this case with invalid data: ${inputData}.
+    ...                       Correct: validEmail, invalidDomainEmail, invalidFormatEmail, lackOfDomain
 
 # Verify cases
 User will see the error message for ${fieldName} field should be "${errorMessage}"

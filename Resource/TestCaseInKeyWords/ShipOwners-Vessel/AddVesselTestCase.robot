@@ -92,7 +92,7 @@ Create Vessel Without Transformation Date
     [Tags]    Function   Happy Case
     Given User go to Vessel tab then open Create form
     When User select value no 2 in dropdown list for Vessel Class field
-    And User input into Vessel Name text field with value as "Vessel Test"
+    And User input into Vessel Name text field with value as "Vessel Test"      #Return value: ${inputData}
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email
     And User click Submit button
@@ -129,7 +129,7 @@ Create Vessel with Transformation Date as current date
     [Documentation]    This test case verify the create vessel with future transformation date successfully
     [Tags]    Function  HappyCase
     Given User go to Vessel tab then open Create form
-    When User select value no 2 in dropdown list for Vessel Class field
+    When User select value no 1 in dropdown list for Vessel Class field
     And User input into Vessel Name text field with value as "Vessel Test"
     And User input into IMO No field (only number) with value contains 8 integers
     And User input into Email field with valid email

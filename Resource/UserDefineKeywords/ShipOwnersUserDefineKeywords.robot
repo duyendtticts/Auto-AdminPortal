@@ -3,12 +3,15 @@ Library    SeleniumLibrary
 Variables    ../WebElements/shipOwnersElements.py
 Variables   ../WebElements/commonWebElements.py
 Resource    ../PageObjects/ShipOwnersPage.robot
+Resource    ../CommonFiles/CommonFunctions.robot
 
 *** Variables ***
 
 
 *** Keywords ***
 User go to Ship Owner page
+    ${status}=   run keyword and return status   wait until element is visible       xpath://button[contains(., 'Cancel')]       10s
+    run keyword if  '${status}'=='True'   User click Cancel button
     wait until element is visible       ${shipOwnersMenu}       10s
     click element    ${shipOwnersMenu}
     ${passed}=  run keyword and return status    wait until page contains element    ${itemInTable}      10s

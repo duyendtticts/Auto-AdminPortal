@@ -11,8 +11,6 @@ firstItemOfTable =  "xpath://table[@role='grid']/tbody/tr/td[1]"
 
 
 
-
-
 #Vessel Tab
 createVesselButton = "xpath://h2[contains(text(),'Vessel')]/ancestor::div[3]/child::span/child::div[1]/button"
 vesselClassDropdownList = "xpath://*[@id='menu-vesselClass']/div/ul"

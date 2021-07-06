@@ -4,7 +4,8 @@ Library    DateTime
 Library    String
 Variables    ../WebElements/shipOwnersElements.py
 Variables    ../WebElements/vesselElements.py
-Resource    ../CommonFiles/CommonFunctions.robot
+Variables    ../WebElements/vesselDetailElements.py
+Resource    ../CommonFiles/WaitKeywords.robot
 
 *** Variables ***
 
@@ -32,14 +33,23 @@ Get the Active Stock Recon Schedule
 
 Edit email field
     [Documentation]     input value into Email field
-    [Arguments]        ${inputValue}
-    input text      ${emailInput}        ${inputValue}
+    [Arguments]         ${inputValue}
+    input text          ${emailInput}        ${inputValue}
+    mouse out           ${emailInput}
+
 
 Show success message
     [Documentation]
     [Arguments]    ${message}
+    waitkeywords.wait for element visible    ${successPopup}
     element text should be      ${successPopup}     ${message}
 
-Verify that email is updated with new value successfully
-    [Documentation]    check email on info page with the update value after editing
-    [Arguments]         ${inputEmail}
+Verify that ${fieldName} is updated with new value: ${inputData} successfully
+    [Documentation]    email should be the edited value before
+    ${fielValue}=    set variable       xpath://p[contains(text(), '${fieldName}')]/following::p[1]
+    element text should be      ${fielValue}       ${inputData}
+
+Verify that Transformation Date is updated with new value successfully
+    [Documentation]    email should be the edited value before
+    [Arguments]         ${transformationStartDate}
+    element should contain      ${transformationStartDateValue}      ${transformationStartDate}
